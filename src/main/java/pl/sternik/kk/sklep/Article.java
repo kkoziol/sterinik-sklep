@@ -1,6 +1,8 @@
 package pl.sternik.kk.sklep;
 
-public class Article extends Object{
+import org.apache.log4j.Logger;
+
+public class Article {
 
     private int id;
     private String name;
@@ -8,6 +10,8 @@ public class Article extends Object{
     private double price;
 
     static int counter;
+
+    private static final Logger log = Logger.getLogger("Article");
 
     public int getId() {
         return id;
@@ -39,6 +43,7 @@ public class Article extends Object{
 
     public void setPrice(double price) {
         this.price = price;
+        printChange();
     }
 
     @Override
@@ -57,7 +62,7 @@ public class Article extends Object{
     }
 
     public Article() {
-        super(); 
+        super();
         counter++;
         this.id = counter;
         this.name = "Brak nazwy";
@@ -65,12 +70,15 @@ public class Article extends Object{
         this.price = 0.0d;
     }
 
-    public static void main(String[] args) {
+    protected void printChange() {
+        log.debug("Zmieniono wartość pola");
+    }
 
-        Article aa = new Article();
+
+    public static void main(String[] args)  {
         Article a = new Article(3, "Mleko", "Mleko tłuste 3.5%", 3.5);
-
-        System.out.println("Wartość counter:"+Article.counter);
-        
+        System.out.println(a);
+        a.setPrice(4);
+        System.out.println(a);
     }
 }
