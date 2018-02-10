@@ -1,12 +1,13 @@
 package pl.sternik.kk.sklep;
 
-
-public class Article {
+public class Article extends Object{
 
     private int id;
     private String name;
     private String description;
     private double price;
+
+    static int counter;
 
     public int getId() {
         return id;
@@ -38,25 +39,38 @@ public class Article {
 
     public void setPrice(double price) {
         this.price = price;
+    }
 
+    @Override
+    public String toString() {
+        return "Article [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
+    }
+
+    public Article(int id, String name, String description, double price) {
+        super();
+
+        counter = id;
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
     public Article() {
-        super();
+        super(); 
+        counter++;
+        this.id = counter;
         this.name = "Brak nazwy";
         this.description = "Brak opisu";
         this.price = 0.0d;
     }
 
-    public static void main(String[] args) throws BadArticleIDException {
+    public static void main(String[] args) {
 
-        Article a = new Article();
-        a.setId(3);
-        a.setName("Mleko");
-        a.setDescription("Mleko tłuste 3.5%");
-        a.setPrice(3.5);
+        Article aa = new Article();
+        Article a = new Article(3, "Mleko", "Mleko tłuste 3.5%", 3.5);
 
-        System.out.println(a);
-
+        System.out.println("Wartość counter:"+Article.counter);
+        
     }
 }
