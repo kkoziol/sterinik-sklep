@@ -20,6 +20,7 @@ public class Book extends Article {
 
     public void setYear(int year) {
         this.year = year;
+        printChange();
     }
     //zwykly zad 17
 //  @Override
