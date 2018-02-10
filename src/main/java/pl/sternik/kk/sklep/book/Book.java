@@ -22,11 +22,16 @@ public class Book extends Article {
         this.year = year;
     }
     //zwykly zad 17
-    @Override
-	public String toString() {
-		return "Book [autor=" + autor + ", year=" + year + ", getId()=" + getId() + ", getName()=" + getName()
-				+ ", getDescription()=" + getDescription() + ", getPrice()=" + getPrice() + "]";
-	}
+//  @Override
+  public String toStringOld() {
+      return "Book [autor=" + autor + ", year=" + year + ", getId()=" + getId() + ", getName()=" + getName()
+              + ", getDescription()=" + getDescription() + ", getPrice()=" + getPrice() + "]";
+  }
+  //zad 18
+  @Override
+  public String toString() {
+      return "Book [autor=" + autor + ", year=" + year + ", "+super.toString() + "]";
+  } 
   
 
     public Book() {
