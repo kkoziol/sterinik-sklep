@@ -1,7 +1,6 @@
 package pl.sternik.kk.sklep;
 
 import org.apache.log4j.Logger;
-
 import pl.sternik.kk.sklep.book.Book;
 
 public class RunSklep {
@@ -44,11 +43,11 @@ public class RunSklep {
 		// nie da sie bo abstrakcyjna
 		// Person osobaA = new Person();
 
-//		Person osoba1 = new Employee();
-//		log.debug("Osoba autoryzowana: " + osoba1.getAuthorization());
-//		Person osoba2 = new Employee();
-//		osoba2.setName("Kacper");
-//		log.debug("Osoba autoryzowana: " + osoba2.getAuthorization());
+		Person osoba1 = new Employee();
+		log.debug("Osoba autoryzowana: " + osoba1.getAuthorization());
+		Person osoba2 = new Employee();
+		osoba2.setName("Kacper");
+		log.debug("Osoba autoryzowana: " + osoba2.getAuthorization());
 
 //		Record plik = new Record(1,"Ramstain","The Best of",1.11,120,"mp3");
 	}
