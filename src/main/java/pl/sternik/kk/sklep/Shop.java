@@ -88,7 +88,6 @@ public class Shop {
 			}
 		});
 		System.out.println("---------->"+sklep.getDownloadable().filesize());
-
 	}
 
 	public String pokazStan() {
