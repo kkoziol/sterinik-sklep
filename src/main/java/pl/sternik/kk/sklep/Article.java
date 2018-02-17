@@ -98,8 +98,8 @@ public class Article {
         while (m.find()) {
             String mozeData = m.group();
             // http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-//            DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-            DateFormat df = DateFormat.getDateInstance();
+            DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+//            DateFormat df = DateFormat.getDateInstance();
             
             Date data = new Date();
 
