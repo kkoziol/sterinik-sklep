@@ -68,7 +68,7 @@ public class Article {
         this.description = description;
         this.price = price;
     }
-    
+
     public Article() {
         super();
         counter++;
@@ -82,11 +82,17 @@ public class Article {
         log.debug("Zmieniono wartość pola");
     }
 
-
-    public static void main(String[] args)  {
-        Article a = new Article(3, "Mleko", "Mleko tłuste 3.5%", 3.5);
-        System.out.println(a);
-        a.setPrice(4);
-        System.out.println(a);
+    public static void main(String[] args) {
+        Article a;
+        try {
+            a = new Article(-3, "Mleko", "Mleko tłuste 3.5%", 3.5);
+            System.out.println(a);
+            a.setPrice(4);
+            System.out.println(a);
+        } catch (ArticleIdAlreadyUsedException e) {
+            e.printStackTrace();
+        } catch (BadArticleIDException e) {
+            e.printStackTrace();
+        }
     }
 }
