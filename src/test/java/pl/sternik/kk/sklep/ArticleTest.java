@@ -40,9 +40,9 @@ public class ArticleTest {
         // given:
         int licznik = Article.counter;
         // when:
-        new Article(25, "Kefir", "Kefir 0%", 0.99);
+        new Article(200, "Kefir", "Kefir 0%", 0.99);
         // then:
-        assertThat(Article.counter).isEqualTo(++licznik);
+        assertThat(Article.counter).isEqualTo(200);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class ArticleTest {
         // when:
         new Article();
         licznik++;
-        new Article(29, "Masło", "Masło Extra", 3.79);
+        new Article(3, "Masło", "Masło Extra", 3.79);
         licznik++;
         // then:
         assertThat(Article.counter).isEqualTo(licznik);
