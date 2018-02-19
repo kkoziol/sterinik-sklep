@@ -49,14 +49,12 @@ public class ArticleTest {
     public void thatCounterKonstrDomKonstrZargs() throws Exception {
 
         // given:
-        int licznik = Article.counter;
+        Article.counter=0;
         // when:
         new Article();
-        licznik++;
-        new Article(3, "Masło", "Masło Extra", 3.79);
-        licznik++;
+        new Article(2, "Masło", "Masło Extra", 3.79);
         // then:
-        assertThat(Article.counter).isEqualTo(licznik);
+        assertThat(Article.counter).isEqualTo(2);
     }
 
     @Test
