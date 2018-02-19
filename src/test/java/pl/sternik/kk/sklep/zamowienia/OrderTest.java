@@ -13,7 +13,7 @@ public class OrderTest {
 
 		// given:
 		Article art = new Article();
-		Order sut = new Order();
+		Order sut = new Order(null, 0);
 		// when:
 
 		// then:
@@ -24,8 +24,8 @@ public class OrderTest {
 	public void thatOrderIsClassOrder() throws Exception {
 
 		// given:
-		Object test = new Order();
-		Order sut = new Order();
+		Object test = new Order(null, 0);
+		Order sut = new Order(null, 0);
 		// when:
 
 		// then:
@@ -37,7 +37,7 @@ public class OrderTest {
 
 		// given:
 		Object test = new Object();
-		Object sut = new Order();
+		Object sut = new Order(null, 0);
 		// when:
 
 		// then:

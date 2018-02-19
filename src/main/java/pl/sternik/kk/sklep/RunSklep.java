@@ -2,12 +2,13 @@ package pl.sternik.kk.sklep;
 
 import org.apache.log4j.Logger;
 import pl.sternik.kk.sklep.book.Book;
+import pl.sternik.kk.sklep.parser.BadArticleIDException;
 
 public class RunSklep {
 
 	private static final Logger log = Logger.getLogger("RunSklep");
 
-	public static void main(String[] args) {//throws BadArticleIDException {
+	public static void main(String[] args) throws BadArticleIDException {
 
 		Article ksiazka = new Article();
 		ksiazka.setId(1);
